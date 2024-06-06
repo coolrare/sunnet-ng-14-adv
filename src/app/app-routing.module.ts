@@ -22,7 +22,10 @@ const routes: Routes = [
         component: DashboardComponent
       },
       {
-        path: 'tables',
+        path: 'tables', redirectTo: 'tables/1', pathMatch: 'full'
+      },
+      {
+        path: 'tables/:id',
         component: TablesComponent
       },
       {
