@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { UtilitiesRoutingModule } from './utilities-routing.module';
 import { UtilitiesComponent } from './utilities.component';
+import { ColorComponent } from './color/color.component';
 
 
 @NgModule({
   declarations: [
-    UtilitiesComponent
+    UtilitiesComponent,
+    ColorComponent
   ],
   imports: [
     CommonModule,

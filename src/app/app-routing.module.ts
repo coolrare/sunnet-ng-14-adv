@@ -27,12 +27,12 @@ const routes: Routes = [
       {
         path: 'tables/:id',
         component: TablesComponent
+      },
+      {
+        path: 'utilities',
+        loadChildren: () => import('./utilities/utilities.module').then(m => m.UtilitiesModule)
       }
     ]
-  },
-  {
-    path: 'utilities',
-    loadChildren: () => import('./utilities/utilities.module').then(m => m.UtilitiesModule)
   }
 ];
 
