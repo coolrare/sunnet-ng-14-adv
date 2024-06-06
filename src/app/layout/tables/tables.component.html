@@ -7,8 +7,13 @@ meta = {{ meta }}
 
 ### Query String ###
 name = {{ name }}
-
 </pre>
+
+<button (click)="decNumber()">&lt;&lt;</button>
+
+<button routerLink="/tables/500" queryParamsHandling="merge" [queryParams]="{ name: 'DEF' }">&lt;&lt; (直接在 template 轉向)</button>
+
+
 </div>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">

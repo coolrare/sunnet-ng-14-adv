@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   templateUrl: './tables.component.html',
@@ -12,7 +12,7 @@ export class TablesComponent implements OnInit {
   meta: string | null = '';
   name: string | null = '';
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     // this.id = this.route.snapshot.paramMap.get('id');
@@ -29,6 +29,17 @@ export class TablesComponent implements OnInit {
       this.name = params.get('name');
     });
 
+  }
+
+  decNumber() {
+    var new_id = Number(this.id) - 1;
+
+    this.router.navigate(['/tables', new_id], {
+      queryParamsHandling: 'merge',
+      queryParams: {
+        name: 'ABC'
+      }
+    });
   }
 
 }
