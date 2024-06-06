@@ -20,11 +20,11 @@ const routes: Routes = [
       {
         path: 'tables',
         component: TablesComponent
+      },
+      {
+        path: '**', component: NotFoundComponent
       }
     ]
-  },
-  {
-    path: '**', component: NotFoundComponent
   }
 ];
 
