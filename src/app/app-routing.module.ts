@@ -6,6 +6,7 @@ import { TablesComponent } from './layout/tables/tables.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { QuicklinkStrategy } from 'ngx-quicklink';
 import { AuthGuard } from './auth.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -36,7 +37,8 @@ const routes: Routes = [
         loadChildren: () => import('./utilities/utilities.module').then(m => m.UtilitiesModule)
       }
     ]
-  }
+  },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

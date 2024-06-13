@@ -9,6 +9,7 @@ import { TablesComponent } from './layout/tables/tables.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { QuicklinkModule, QuicklinkStrategy } from 'ngx-quicklink';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     LayoutComponent,
     DashboardComponent,
     TablesComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
