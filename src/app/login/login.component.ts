@@ -11,6 +11,15 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.document.body.classList.add('bg-gradient-primary');
+
+    // if (this.form.invalid) {
+    //   ShowError();
+    // }
+
+    // if (this.form.valid) {
+    //   SubmitEvent();
+    // }
+
   }
   ngOnDestroy(): void {
     this.document.body.classList.remove('bg-gradient-primary');
