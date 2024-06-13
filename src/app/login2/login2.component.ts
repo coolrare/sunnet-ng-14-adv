@@ -1,4 +1,4 @@
-import { DOCUMENT } from '@angular/common';
+import { DOCUMENT, CommonModule } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
@@ -13,10 +13,11 @@ export class Login2Component implements OnInit {
     isRememberMe: true,
   };
   form = this.fb.group({
-    email: this.fb.control('', {
+    email: this.fb.control('user2@example.com', {
       validators: [Validators.required, Validators.email],
       asyncValidators: [],
       updateOn: 'blur',
+      nonNullable: true,
     }),
     password: this.fb.control('', {
       validators: [
@@ -26,17 +27,24 @@ export class Login2Component implements OnInit {
       ],
       asyncValidators: [],
       updateOn: 'blur',
+      nonNullable: true,
     }),
     isRememberMe: this.fb.control(true, {
       validators: [],
       asyncValidators: [],
       updateOn: 'change',
+      nonNullable: true,
     }),
   });
   constructor(
     @Inject(DOCUMENT) private document: Document,
     private fb: FormBuilder
   ) {}
+
+  doReset() {
+    this.form.reset();
+  }
+
   ngOnInit(): void {
     this.document.body.classList.add('bg-gradient-primary');
 
