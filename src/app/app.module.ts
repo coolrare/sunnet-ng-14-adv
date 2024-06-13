@@ -7,6 +7,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { DashboardComponent } from './layout/dashboard/dashboard.component';
 import { TablesComponent } from './layout/tables/tables.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { QuicklinkModule, QuicklinkStrategy } from 'ngx-quicklink';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    QuicklinkModule
   ],
   providers: [],
   bootstrap: [AppComponent]
