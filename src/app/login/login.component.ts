@@ -7,7 +7,11 @@ import { Component, Inject, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  data: any = {}
+  data: any = {
+    email: 'user@example.com',
+    password: '',
+    isRememberMe: true
+  }
 
   constructor(@Inject(DOCUMENT) private document: Document) { }
 
