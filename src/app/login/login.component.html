@@ -13,7 +13,7 @@
                   <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                 </div>
                 <pre>{{ data | json }}</pre>
-                <form class="user was-validated">
+                <form class="user" #form="ngForm" [class.was-validated]="form.submitted">
                   <div class="form-group">
                     <input type="email" class="form-control form-control-user"
                       [(ngModel)]="data.email" name="email" required email
@@ -45,7 +45,7 @@ mPassword.errors = {{mPassword.errors | json}}</pre>
                       <label class="custom-control-label" for="customCheck">Remember Me</label>
                     </div>
                   </div>
-                  <button class="btn btn-primary btn-user btn-block"> Login </button>
+                  <button type="submit" class="btn btn-primary btn-user btn-block"> Login </button>
                   <hr>
                   <a href="index.html" class="btn btn-google btn-user btn-block">
                     <i class="fab fa-google fa-fw"></i> Login with Google </a>
