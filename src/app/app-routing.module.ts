@@ -38,7 +38,12 @@ const routes: Routes = [
       }
     ]
   },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent,
+    title: 'Login',
+    data: {
+      roles: ['admin', 'user']
+    }
+   },
 ];
 
 @NgModule({
