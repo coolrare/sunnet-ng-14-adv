@@ -1,6 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
 
 @Component({
   templateUrl: './login2.component.html',
@@ -14,7 +14,13 @@ export class Login2Component implements OnInit {
     isRememberMe: true
   }
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  form: FormGroup = this.fb.group({
+    email: this.fb.control(this.data.email),
+    password: this.fb.control(this.data.password),
+    isRememberMe: this.fb.control(this.data.isRememberMe)
+  });
+
+  constructor(@Inject(DOCUMENT) private document: Document, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.document.body.classList.add('bg-gradient-primary');
@@ -32,12 +38,12 @@ export class Login2Component implements OnInit {
     this.document.body.classList.remove('bg-gradient-primary');
   }
 
-  doSubmit(form: NgForm) {
-    if (form.valid) {
+  doSubmit() {
+    if (this.form.valid) {
       // Submit the form
     }
 
-    if (form.invalid) {
+    if (this.form.invalid) {
       // Show error
     }
   }
