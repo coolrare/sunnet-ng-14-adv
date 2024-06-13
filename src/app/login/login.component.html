@@ -32,7 +32,7 @@ mPassword.untouched = {{mPassword.untouched}}
 mPassword.status = {{mPassword.status}}
 mPassword.errors = {{mPassword.errors | json}}</pre>
                     <input type="password" class="form-control form-control-user"
-                      [(ngModel)]="data.password" name="password" required minlength="6" maxlength="32"
+                      [(ngModel)]="data.password" name="password" required minlength="6" maxlength="32" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,32}$"
                       #mPassword="ngModel"
                            placeholder="Password">
                     <div *ngIf="mPassword.invalid && mPassword.errors?.['required']">密碼為必填</div>
