@@ -11,6 +11,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { QuicklinkModule, QuicklinkStrategy } from 'ngx-quicklink';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
+import { Login2Component } from './login2/login2.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './login/login.component';
     DashboardComponent,
     TablesComponent,
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    Login2Component
   ],
   imports: [
     BrowserModule,
