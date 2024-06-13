@@ -7,6 +7,8 @@ import { Component, Inject, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  data: any = {}
+
   constructor(@Inject(DOCUMENT) private document: Document) { }
 
   ngOnInit(): void {
