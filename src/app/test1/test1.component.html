@@ -1,0 +1,16 @@
+<h1>My Only FormControl</h1>
+
+Search:  <input [formControl]="ctrl" placeholder="Name">
+
+<hr>
+<pre>ctrl.value = {{ctrl.value | json}}
+ctrl.valid = {{ctrl.valid}}
+ctrl.invalid = {{ctrl.invalid}}
+ctrl.enabled = {{ctrl.enabled}}
+ctrl.disabled = {{ctrl.disabled}}
+ctrl.pristine = {{ctrl.pristine}}
+ctrl.dirty = {{ctrl.dirty}}
+ctrl.touched = {{ctrl.touched}}
+ctrl.untouched = {{ctrl.untouched}}
+ctrl.status = {{ctrl.status}}
+ctrl.errors = {{ctrl.errors | json}}</pre>

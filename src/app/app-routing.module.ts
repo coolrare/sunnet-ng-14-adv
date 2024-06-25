@@ -8,6 +8,7 @@ import { QuicklinkStrategy } from 'ngx-quicklink';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { Login2Component } from './login2/login2.component';
+import { Test1Component } from './test1/test1.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,7 @@ const routes: Routes = [
     }
   },
   { path: 'login2', component: Login2Component },
+  { path: 'test1', component: Test1Component },
 ];
 
 @NgModule({
