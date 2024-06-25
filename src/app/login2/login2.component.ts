@@ -8,27 +8,57 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 })
 export class Login2Component implements OnInit {
   data: any = {
-    email: 'user@example.com',
-    password: '',
+    users: [
+      {
+        email: 'user@example.com',
+        password: '',
+      },
+      {
+        email: 'user2@example.com',
+        password: '123',
+      }
+    ],
     isRememberMe: true,
   };
   form = this.fb.group({
-    email: this.fb.control('user2@example.com', {
-      validators: [Validators.required, Validators.email],
-      asyncValidators: [],
-      updateOn: 'blur',
-      nonNullable: true,
-    }),
-    password: this.fb.control('', {
-      validators: [
-        Validators.required,
-        Validators.minLength(6),
-        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/),
-      ],
-      asyncValidators: [],
-      updateOn: 'blur',
-      nonNullable: true,
-    }),
+    users: this.fb.array([
+      this.fb.group({
+        email: this.fb.control('user2@example.com', {
+          validators: [Validators.required, Validators.email],
+          asyncValidators: [],
+          updateOn: 'blur',
+          nonNullable: true,
+        }),
+        password: this.fb.control('', {
+          validators: [
+            Validators.required,
+            Validators.minLength(6),
+            Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/),
+          ],
+          asyncValidators: [],
+          updateOn: 'blur',
+          nonNullable: true,
+        }),
+      }),
+      this.fb.group({
+        email: this.fb.control('user2@example.com', {
+          validators: [Validators.required, Validators.email],
+          asyncValidators: [],
+          updateOn: 'blur',
+          nonNullable: true,
+        }),
+        password: this.fb.control('', {
+          validators: [
+            Validators.required,
+            Validators.minLength(6),
+            Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/),
+          ],
+          asyncValidators: [],
+          updateOn: 'blur',
+          nonNullable: true,
+        }),
+      }),
+    ]),
     isRememberMe: this.fb.control(true, {
       validators: [],
       asyncValidators: [],
