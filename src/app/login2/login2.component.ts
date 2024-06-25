@@ -1,6 +1,7 @@
 import { DOCUMENT, CommonModule } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { twIdValidator } from '../shared/validators/twIdValidator';
 
 @Component({
   templateUrl: './login2.component.html',
@@ -58,7 +59,8 @@ export class Login2Component implements OnInit {
     this.form.controls.users.push(
       this.fb.group({
         email: this.fb.control(defaultEmail, {
-          validators: [Validators.required, Validators.email],
+          // validators: [Validators.required, Validators.email],
+          validators: [twIdValidator('老兄，你忘了填寫身份證字號！')],
           asyncValidators: [],
           updateOn: 'blur',
           nonNullable: true,
